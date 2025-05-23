@@ -1,18 +1,27 @@
 #!/bin/bash
 
-# TODO: Rewrite to save to a central location 
-
 # Create a timestamp for the filename
 TIMESTAMP=$(date +%Y%m%d_%H%M%S)
 
 # Get the current working directory
-CURRENT_DIR=$(pwd)
-OUTPUT_FILE="$CURRENT_DIR/recording_$TIMESTAMP.mp4"
+VIDEOS_DIR="$HOME/.local/bin/scripts/recording/videos"
+
+# Path to save the current recording to
+OUTPUT_FILE="$VIDEOS_DIR/screen_webcam_recording_$TIMESTAMP.mp4"
+
+# File which container save path for this recording
+FILE_INFO="$VIDEOS_DIR/.ffmpeg_recording_file.txt"
 
 # Create a PID file to store the process ID
-PID_FILE="$HOME/.ffmpeg_recording.pid"
+# This process ID will be used to send a kill signal at stop time
+PID_FILE="$VIDEOS_DIR/.ffmpeg_recording.pid"
+
+echo "Recording to $OUTPUT_FILE"
 
 # Start the recording
+# TODO: Only works when connected to webcam and Mic, change to make this a priority based choice
+# use lsusb to identify connected interface
+
 ffmpeg \
   -f x11grab -video_size 1920x1080 -framerate 30 -i $DISPLAY \
   -thread_queue_size 4096 -f v4l2 -input_format mjpeg -framerate 30 -video_size 640x480 -i /dev/video0 \
@@ -31,11 +40,6 @@ ffmpeg \
 # Store the process ID
 echo $! > $PID_FILE
 
-# Also store the output file path for the stop script to reference
+# Also store the output file path for the stop script to reference for notification
 echo "$OUTPUT_FILE" > "$HOME/.ffmpeg_recording_file.txt"
-
-zenity --notification --text="⚫ REC" &
-echo $! > "$HOME/.zenity_pid"
-
-# Notify the user
-# notify-send "Recording Started" "Saving to $OUTPUT_FILE"
+echo "STARTED RECORDING"

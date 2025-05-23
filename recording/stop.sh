@@ -3,8 +3,15 @@
 # TODO: Write to a central location
 
 # PID file location
-PID_FILE="$HOME/.ffmpeg_recording.pid"
-FILE_INFO="$HOME/.ffmpeg_recording_file.txt"
+
+VIDEOS_DIR="$HOME/.local/bin/scripts/recording/videos/"
+# File which container save path for the recording to 
+# be stopped
+FILE_INFO="$VIDEOS_DIR/.ffmpeg_recording_file.txt"
+
+# File with the running FFMPEG process ID
+# We will send a kill signal to this process id
+PID_FILE="$VIDEOS_DIR/.ffmpeg_recording.pid"
 
 # Check if the PID file exists
 if [ -f "$PID_FILE" ]; then
@@ -22,11 +29,6 @@ if [ -f "$PID_FILE" ]; then
     
     # Remove the PID file and file info
     rm "$PID_FILE"
-    # Modify the stop script to add this after the 'rm "$PID_FILE"' line:
-    if [ -f "$HOME/.zenity_pid" ]; then
-        kill $(cat "$HOME/.zenity_pid")
-        rm "$HOME/.zenity_pid"
-    fi
     [ -f "$FILE_INFO" ] && rm "$FILE_INFO"
     
     # Notify the user
