@@ -24,7 +24,7 @@ echo "Recording to $OUTPUT_FILE"
 
 ffmpeg \
   -f x11grab -video_size 1920x1080 -framerate 30 -i $DISPLAY \
-  -thread_queue_size 4096 -f v4l2 -input_format mjpeg -framerate 30 -video_size 640x480 -i /dev/video0 \
+  -thread_queue_size 4096 -f v4l2 -input_format mjpeg -framerate 50 -video_size 640x480 -i /dev/video0 \
   -thread_queue_size 4096 -f alsa -i default \
   -filter_complex " \
     [0:v]setpts=PTS-STARTPTS[screen]; \
