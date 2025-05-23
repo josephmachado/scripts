@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# TODO: Rewrite to save to a central location 
+
 # Create a timestamp for the filename
 TIMESTAMP=$(date +%Y%m%d_%H%M%S)
 

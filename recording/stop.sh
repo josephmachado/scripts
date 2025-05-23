@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# TODO: Write to a central location
+
 # PID file location
 PID_FILE="$HOME/.ffmpeg_recording.pid"
 FILE_INFO="$HOME/.ffmpeg_recording_file.txt"
