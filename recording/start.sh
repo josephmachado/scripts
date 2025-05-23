@@ -41,5 +41,5 @@ ffmpeg \
 echo $! > $PID_FILE
 
 # Also store the output file path for the stop script to reference for notification
-echo "$OUTPUT_FILE" > "$HOME/.ffmpeg_recording_file.txt"
+echo "$OUTPUT_FILE" > "$FILE_INFO"
 echo "STARTED RECORDING"
