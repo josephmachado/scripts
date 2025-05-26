@@ -6,7 +6,11 @@ Usage
 
 Paste to LLM chat and get the output
 
-TODO: Automate LLM call with Python
+TODO: Store t,s,u in a csv with date -> generate prompt -> Check quality -> post to social(s) 
+
+TODO: Automate collection of t,s,u via conversations, voice mail to text, etc
+
+TODO: Create an eval pipeline => Evaluate perf (at 12,24,30 h of posting) -> Identify levers -> Optimize algo
 
 """
 
