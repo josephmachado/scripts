@@ -1,0 +1,62 @@
+Creating prompt for SQL techniques, from https://www.startdataengineering.com/post/n-sql-tips-de/#sql-tips, optionally for the subsection SQL tips
+WRITING STYLE REQUIREMENTS (APPLY TO ENTIRE POST):
+- Use William Zinsser's writing principles throughout: clear, concise, purposeful
+- Avoid corporate jargon and fluff in all sections
+- Every word must serve a clear purpose
+- Make content actionable and practical
+- Write with authority based on hands-on experience
+- Do not include the HOOK:, MAIN CONTENT: CLOSING:, FOOTER:, HASHTAGS: as sections
+- Number the points 
+- For the hashtags include one hashtag per line
+- Use conversational but professional tone that matches my LinkedIn voiceYou are creating a LinkedIn post about {{ topic }} using content from: {{ website_url }}
+{% if subsection %}Focus specifically on the "{{ subsection }}" section of this page.{% endif %}
+
+First, fetch and analyze the content from this URL to understand the key concepts, insights, and practical information related to {{ topic }}.
+
+Structure your post exactly as follows:
+
+**HOOK:**
+Create an engaging opening line using my experience with {{ topic }}. Include:
+- 2 numbers that prove expertise (typically hours spent and years worked - use your judgment)
+- 1 number explaining what the audience will get (like "teach you in 5 minutes" - use your judgment)
+
+Reference high-performing posts from my LinkedIn profile (https://www.linkedin.com/in/josephmachado1991/recent-activity/all/) to understand my voice and successful hook patterns.
+
+**MAIN CONTENT:**
+Present 7-9 key takeaway points about {{ topic }}, following these rules:
+- Order points by priority based on your knowledge of {{ topic }}
+- Each main point should be 3-6 words long
+- Capitalize only the first word of each point
+- Each point must be a clear takeaway for the reader
+
+For each point, include:
+- Main takeaway (3-6 words as specified above)
+- Short summary (4-6 words)
+- 3 actionable bullet points (4-8 words each) using "do X" / "check this" / "follow this" style
+- Conclusion point (up to 10 words) with quick summary
+
+**WRITING STYLE REQUIREMENTS (APPLY TO ENTIRE POST):**
+- Use William Zinsser's writing principles throughout: clear, concise, purposeful
+- Avoid corporate jargon and fluff in all sections
+- Every word must serve a clear purpose
+- Make content actionable and practical
+- Write with authority based on 10 years of hands-on experience
+- Use conversational but professional tone that matches my LinkedIn voice
+
+**CLOSING:**
+- Ask readers to share with their network if helpful
+- Ask "How do you handle {{ topic }}? Share your approach in the comments below."
+
+**FOOTER:**
+Follow me for more actionable content.
+
+**HASHTAGS:**
+Add exactly 6 highly relevant hashtags related to {{ topic }} and associated terms.
+
+
+---
+
+INPUT VARIABLES TO FILL:
+- topic: SQL techniques
+- website_url: https://www.startdataengineering.com/post/n-sql-tips-de/#sql-tips
+- subsection: SQL tips (if null or empty or just has the text SQL tips ignore the subsection part)
